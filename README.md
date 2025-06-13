@@ -1,5 +1,7 @@
 # 6.23_automobility_lesson
 6월23일
+
+6_23_강의_step1_자율주행_기초_코드.ipynb의 결과 분석
 ![image](https://github.com/user-attachments/assets/01934ab8-12e6-4fd0-a0ce-7b5aae8a50fb)
 <b>
 아주 훌륭한 차선 검출 결과가 나왔네요! 각 단계별로 상세히 분석해드릴게요.
