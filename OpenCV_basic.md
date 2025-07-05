@@ -1,4 +1,5 @@
 # OpenCV 완전 가이드
+ OpenCV 비교 애니메이션 :
 https://claude.ai/public/artifacts/39cc3eb1-891d-430e-a1d1-84538eb45522
 
 
