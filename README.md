@@ -15,7 +15,7 @@
 - [Pandas](pandas.md)
 - [Numpy](numpy.md)
 - [Matplotlib](Matplotlib.md)
-## 4. Machine Learning
+## 4. Machine Learning 
 
 - [Machine Learning Basic](ml_basic.md)
 - [모델 훈련 및 평가](ml_test.md)
