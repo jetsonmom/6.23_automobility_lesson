@@ -258,7 +258,7 @@ plt.imshow(image, cmap='jet')        # 무지개색
 
 ---
 
-## 왜 OpenCV를 사용해야 할까?
+## 왜 OpenCV를 사용하나?
 
 | 이유 | 설명 |
 |------|------|
