@@ -1,15 +1,5 @@
-|------|------|------|--------|
-| 구분|지도학습 (Supervised Learning)|비지도학습 (Unsupervised Learning) |강화학습 (Reinforcement Learning)  |
-|------|------|------|--------|
+### 머신러닝 학습 방법 비교
 
-
-#
-
-| 변환 | 코드 |
-|------|------|
-| BGR → RGB | `cv2.cvtColor(image, cv2.COLOR_BGR2RGB)` |
-| RGB → BGR | `cv2.cvtColor(image, cv2.COLOR_RGB2BGR)` |
-
----
-
-
+| 항목 | 지도학습 (Supervised) | 비지도학습 (Unsupervised) | 강화학습 (Reinforcement) |
+|------|------------------------|----------------------------|---------------------------|
+| 데이터 형태 | 라벨링된 데이터 (입력/출력 쌍) | 라벨 없음 | 환경과 상호작용 데이터 |
