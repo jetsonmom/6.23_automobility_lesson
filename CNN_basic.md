@@ -9,8 +9,8 @@
 - [전체 흐름 예시](#전체-흐름-예시)
 - [요약 표](#요약-표)
 
-## CNN 기본 개념
-## CNN 기본 개념 애니메이션 
+# CNN 기본 개념
+
 # 🧠 CNN(Convolutional Neural Network) 용어 완전 정리
 
 ## 🎬 CNN 기본 개념 애니메이션
