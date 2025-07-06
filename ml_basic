@@ -3,21 +3,6 @@
 |------|------|------|--------|
 
 
-### 필터와 커널
-
-| 용어 | 영어 | 설명 |
-|------|------|------|
-| 커널 | Kernel | 필터 행렬 |
-| 합성곱 | Convolution | 커널과 이미지의 연산 |
-| 가우시안 필터 | Gaussian Filter | 가우시안 블러 필터 |
-| 중간값 필터 | Median Filter | 노이즈 제거 필터 |
-| 양방향 필터 | Bilateral Filter | 경계 보존 필터 |
-| 형태학적 연산 | Morphological Operations | 모양 기반 처리 |
-| 침식 | Erosion | 객체 줄이기 |
-| 팽창 | Dilation | 객체 늘리기 |
-| 열기 | Opening | 침식 후 팽창 |
-| 닫기 | Closing | 팽창 후 침식 |
-
 #
 
 | 변환 | 코드 |
@@ -27,12 +12,4 @@
 
 ---
 
-## 🎯 **체크리스트**
 
-- [ ] OpenCV로 읽었나? → BGR
-- [ ] Matplotlib으로 표시? → RGB 변환 필요
-- [ ] 색상이 이상하다면? → 변환 코드 확인
-
----
-
-**🌟 핵심: `cv2.cvtColor(image, cv2.COLOR_BGR2RGB)` 🌟**
