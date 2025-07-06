@@ -11,8 +11,6 @@
 
 # CNN 기본 개념
 
-# 🧠 CNN(Convolutional Neural Network) 용어 완전 정리
-
 ## 🎬 CNN 기본 개념 애니메이션
 
 다음 링크들을 통해 CNN의 핵심 개념들을 시각적으로 이해할 수 있습니다:
@@ -45,8 +43,8 @@
 - [고급 기법](#고급-기법)
 - [전체 흐름 예시](#전체-흐름-예시)
 - [요약 표](#요약-표)
-
-## CNN 기본 개념
+  
+# 🧠 CNN(Convolutional Neural Network) 용어 완전 정리
 
 ### 1. Convolution (합성곱)
 
