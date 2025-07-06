@@ -10,6 +10,11 @@
 - [요약 표](#요약-표)
 
 ## CNN 기본 개념
+https://claude.ai/public/artifacts/2cebc728-66b5-414a-9e97-991f60a2a7e1
+
+https://claude.ai/public/artifacts/5290adc4-4af1-4b9b-8f78-7d13e7c2e5d5
+https://claude.ai/public/artifacts/84856cad-7697-4372-87a8-3507edb06af0
+https://claude.ai/public/artifacts/e8abe969-7543-4ce0-beb1-7cca14f231be
 
 ### 1. Convolution (합성곱)
 
