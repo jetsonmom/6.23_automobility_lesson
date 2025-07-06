@@ -188,11 +188,11 @@ class RealImageTrafficSignRecognition:
                     image[:, :, 1] = np.random.uniform(0.0, 0.2, (64, 64))
                     image[:, :, 2] = np.random.uniform(0.0, 0.2, (64, 64))
                     
-                elif class_id == 1:  # 직진 (파란색)
-                    # 파란 배경
-                    image[:, :, 0] = np.random.uniform(0.0, 0.2, (64, 64))
-                    image[:, :, 1] = np.random.uniform(0.0, 0.2, (64, 64))
-                    image[:, :, 2] = np.random.uniform(0.7, 1.0, (64, 64))
+                elif class_id == 1:  # 직진 (초록색)
+                # 초록 배경
+                    image[:, :, 0] = np.random.uniform(0.0, 0.2, (64, 64))  # 빨강 낮게
+                    image[:, :, 1] = np.random.uniform(0.7, 1.0, (64, 64))  # 초록 높게 ← 여기!
+                    image[:, :, 2] = np.random.uniform(0.0, 0.2, (64, 64))  # 파랑 낮게
                     
                 elif class_id == 2:  # 좌회전 (초록색)
                     # 초록 배경
