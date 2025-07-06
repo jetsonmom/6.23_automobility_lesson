@@ -6,258 +6,188 @@
     <title>머신러닝 학습 방법 비교표</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
             margin: 20px;
-            background-color: #f8f9fa;
-            line-height: 1.6;
+            background-color: #ffffff;
+            line-height: 1.5;
+            color: #24292f;
         }
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 30px;
-            font-size: 2.5em;
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #24292f;
+            border-bottom: 1px solid #d1d9e0;
+            padding-bottom: 8px;
         }
         .comparison-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
-            font-size: 14px;
+            margin-bottom: 40px;
+            border: 1px solid #d1d9e0;
         }
         .comparison-table th, .comparison-table td {
-            border: 2px solid #3498db;
-            padding: 15px;
-            text-align: center;
-            vertical-align: middle;
+            border: 1px solid #d1d9e0;
+            padding: 12px 16px;
+            text-align: left;
+            vertical-align: top;
         }
         .comparison-table th {
-            background-color: #3498db;
-            color: white;
-            font-weight: bold;
+            background-color: #f6f8fa;
+            font-weight: 600;
+            text-align: center;
+        }
+        .category-cell {
+            background-color: #f6f8fa;
+            font-weight: 600;
+            width: 150px;
+            text-align: center;
+        }
+        .content-cell {
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+        .method-header {
             font-size: 16px;
-        }
-        .category-header {
-            background-color: #ecf0f1;
-            font-weight: bold;
-            color: #2c3e50;
-            width: 120px;
-            font-size: 15px;
-        }
-        .supervised {
-            background-color: #e8f5e8;
-            border-left: 4px solid #27ae60;
-        }
-        .unsupervised {
-            background-color: #fff3e0;
-            border-left: 4px solid #f39c12;
-        }
-        .reinforcement {
-            background-color: #f0f8ff;
-            border-left: 4px solid #3498db;
-        }
-        .icon {
-            font-size: 18px;
-            margin-right: 8px;
-        }
-        .algorithm-list {
-            text-align: left;
-            line-height: 1.8;
-        }
-        .algorithm-list li {
-            margin: 3px 0;
-        }
-        .pros-cons {
-            text-align: left;
-            font-size: 12px;
-            line-height: 1.5;
-        }
-        .pros {
-            color: #27ae60;
-        }
-        .cons {
-            color: #e74c3c;
-        }
-        .method-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 5px;
+            font-weight: 600;
         }
         .method-subtitle {
             font-size: 14px;
-            color: #7f8c8d;
-            font-style: italic;
+            color: #656d76;
+            font-weight: normal;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>📊 머신러닝 학습 방법 비교표</h1>
+        <h2>📊 비교표</h2>
         
         <table class="comparison-table">
             <thead>
                 <tr>
-                    <th>구분</th>
+                    <th style="width: 150px;">특징</th>
                     <th>
-                        <div class="method-title">지도학습</div>
+                        <div class="method-header">지도학습</div>
                         <div class="method-subtitle">(Supervised Learning)</div>
                     </th>
                     <th>
-                        <div class="method-title">비지도학습</div>
+                        <div class="method-header">비지도학습</div>
                         <div class="method-subtitle">(Unsupervised Learning)</div>
                     </th>
                     <th>
-                        <div class="method-title">강화학습</div>
+                        <div class="method-header">강화학습</div>
                         <div class="method-subtitle">(Reinforcement Learning)</div>
                     </th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td class="category-header">🎯 데이터 형태</td>
-                    <td class="supervised">라벨링된 데이터<br>(입력-출력 쌍)</td>
-                    <td class="unsupervised">라벨링되지 않은 데이터</td>
-                    <td class="reinforcement">환경과의 상호작용 데이터</td>
+                    <td class="category-cell">데이터 형태</td>
+                    <td class="content-cell">라벨링된 데이터 (입력-출력 쌍)</td>
+                    <td class="content-cell">라벨링되지 않은 데이터</td>
+                    <td class="content-cell">환경과의 상호작용 데이터</td>
                 </tr>
                 <tr>
-                    <td class="category-header">📈 학습 목표</td>
-                    <td class="supervised">입력에 대한 정확한 출력 예측</td>
-                    <td class="unsupervised">데이터의 숨겨진 패턴 발견</td>
-                    <td class="reinforcement">누적 보상 최대화</td>
+                    <td class="category-cell">학습 목표</td>
+                    <td class="content-cell">입력에 대한 정확한 출력 예측</td>
+                    <td class="content-cell">데이터의 숨겨진 패턴 발견</td>
+                    <td class="content-cell">누적 보상 최대화</td>
                 </tr>
                 <tr>
-                    <td class="category-header">🔄 학습 방식</td>
-                    <td class="supervised">정답을 알고 있는 상태에서 학습</td>
-                    <td class="unsupervised">정답 없이 데이터 자체에서 학습</td>
-                    <td class="reinforcement">행동의 결과를 통해 학습</td>
+                    <td class="category-cell">학습 방식</td>
+                    <td class="content-cell">정답을 알고 있는 상태에서 학습</td>
+                    <td class="content-cell">정답 없이 데이터 자체에서 학습</td>
+                    <td class="content-cell">행동의 결과를 통해 학습</td>
                 </tr>
                 <tr>
-                    <td class="category-header">💬 피드백</td>
-                    <td class="supervised">즉각적인 정답 제공</td>
-                    <td class="unsupervised">피드백 없음</td>
-                    <td class="reinforcement">지연된 보상/처벌</td>
+                    <td class="category-cell">피드백</td>
+                    <td class="content-cell">즉각적인 정답 제공</td>
+                    <td class="content-cell">피드백 없음</td>
+                    <td class="content-cell">지연된 보상/처벌</td>
                 </tr>
                 <tr>
-                    <td class="category-header">⚙️ 주요 알고리즘</td>
-                    <td class="supervised">
-                        <ul class="algorithm-list">
-                            <li>선형회귀</li>
-                            <li>의사결정트리</li>
-                            <li>SVM</li>
-                            <li>신경망</li>
-                        </ul>
-                    </td>
-                    <td class="unsupervised">
-                        <ul class="algorithm-list">
-                            <li>K-means</li>
-                            <li>계층적 군집화</li>
-                            <li>PCA</li>
-                            <li>DBSCAN</li>
-                        </ul>
-                    </td>
-                    <td class="reinforcement">
-                        <ul class="algorithm-list">
-                            <li>Q-learning</li>
-                            <li>정책 경사</li>
-                            <li>Actor-Critic</li>
-                        </ul>
-                    </td>
+                    <td class="category-cell">주요 알고리즘</td>
+                    <td class="content-cell">선형회귀, 의사결정트리, SVM, 신경망</td>
+                    <td class="content-cell">K-means, 계층적 군집화, PCA, DBSCAN</td>
+                    <td class="content-cell">Q-learning, 정책 경사, Actor-Critic</td>
                 </tr>
                 <tr>
-                    <td class="category-header">🎲 문제 유형</td>
-                    <td class="supervised">분류, 회귀</td>
-                    <td class="unsupervised">군집화, 차원축소, 밀도추정</td>
-                    <td class="reinforcement">게임, 로봇제어, 자율주행</td>
+                    <td class="category-cell">문제 유형</td>
+                    <td class="content-cell">분류, 회귀</td>
+                    <td class="content-cell">군집화, 차원축소, 밀도추정</td>
+                    <td class="content-cell">게임, 로봇제어, 자율주행</td>
                 </tr>
                 <tr>
-                    <td class="category-header">💡 활용 예시</td>
-                    <td class="supervised">
-                        • 이메일 스팸 분류<br>
-                        • 집값 예측<br>
-                        • 의료 진단
-                    </td>
-                    <td class="unsupervised">
-                        • 고객 세분화<br>
-                        • 이상 탐지<br>
-                        • 추천 시스템
-                    </td>
-                    <td class="reinforcement">
-                        • 알파고<br>
-                        • 자율주행<br>
-                        • 게임 AI
-                    </td>
+                    <td class="category-cell">활용 예시</td>
+                    <td class="content-cell">이메일 스팸 분류, 집값 예측, 의료 진단</td>
+                    <td class="content-cell">고객 세분화, 이상 탐지, 추천 시스템</td>
+                    <td class="content-cell">알파고, 자율주행, 게임 AI</td>
                 </tr>
                 <tr>
-                    <td class="category-header">📚 데이터 요구사항</td>
-                    <td class="supervised">대량의 라벨링된 데이터 필요</td>
-                    <td class="unsupervised">라벨링 불필요하지만 양질의 데이터 필요</td>
-                    <td class="reinforcement">환경과 상호작용할 수 있는 시뮬레이터 또는 실제 환경</td>
+                    <td class="category-cell">성능 평가</td>
+                    <td class="content-cell">정확도, 정밀도, 재현율 등 명확한 지표</td>
+                    <td class="content-cell">클러스터 품질, 차원축소 효과 등</td>
+                    <td class="content-cell">누적 보상, 성공률</td>
                 </tr>
                 <tr>
-                    <td class="category-header">📊 성능 평가</td>
-                    <td class="supervised">정확도, 정밀도, 재현율 등 명확한 지표</td>
-                    <td class="unsupervised">클러스터 품질, 차원축소 효과 등</td>
-                    <td class="reinforcement">누적 보상, 성공률</td>
+                    <td class="category-cell">학습 속도</td>
+                    <td class="content-cell">상대적으로 빠름</td>
+                    <td class="content-cell">중간 정도</td>
+                    <td class="content-cell">상대적으로 느림</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>✅ 주요 장점</h2>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th style="width: 150px;">학습 방법</th>
+                    <th>장점</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="category-cell">지도학습</td>
+                    <td class="content-cell">명확한 목표와 성능 지표, 검증된 알고리즘 다수, 실용적 문제 해결에 효과적</td>
                 </tr>
                 <tr>
-                    <td class="category-header">⚡ 학습 속도</td>
-                    <td class="supervised">상대적으로 빠름</td>
-                    <td class="unsupervised">중간 정도</td>
-                    <td class="reinforcement">상대적으로 느림</td>
+                    <td class="category-cell">비지도학습</td>
+                    <td class="content-cell">라벨링 비용 불필요, 새로운 패턴 발견 가능, 탐색적 데이터 분석에 유용</td>
                 </tr>
                 <tr>
-                    <td class="category-header">✅ 장점</td>
-                    <td class="supervised">
-                        <div class="pros-cons pros">
-                            • 명확한 목표와 성능 지표<br>
-                            • 검증된 알고리즘 다수<br>
-                            • 실용적 문제 해결에 효과적
-                        </div>
-                    </td>
-                    <td class="unsupervised">
-                        <div class="pros-cons pros">
-                            • 라벨링 비용 불필요<br>
-                            • 새로운 패턴 발견 가능<br>
-                            • 탐색적 데이터 분석에 유용
-                        </div>
-                    </td>
-                    <td class="reinforcement">
-                        <div class="pros-cons pros">
-                            • 복잡한 의사결정 문제 해결<br>
-                            • 환경 변화에 적응적<br>
-                            • 인간 개입 없이 자율 학습
-                        </div>
-                    </td>
+                    <td class="category-cell">강화학습</td>
+                    <td class="content-cell">복잡한 의사결정 문제 해결, 환경 변화에 적응적, 인간 개입 없이 자율 학습</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>❌ 주요 단점</h2>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th style="width: 150px;">학습 방법</th>
+                    <th>단점</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="category-cell">지도학습</td>
+                    <td class="content-cell">라벨링 비용 높음, 편향된 데이터에 민감, 새로운 패턴 발견 제한적</td>
                 </tr>
                 <tr>
-                    <td class="category-header">❌ 단점</td>
-                    <td class="supervised">
-                        <div class="pros-cons cons">
-                            • 라벨링 비용 높음<br>
-                            • 편향된 데이터에 민감<br>
-                            • 새로운 패턴 발견 제한적
-                        </div>
-                    </td>
-                    <td class="unsupervised">
-                        <div class="pros-cons cons">
-                            • 성능 평가 어려움<br>
-                            • 결과 해석 어려움<br>
-                            • 명확한 목표 설정 어려움
-                        </div>
-                    </td>
-                    <td class="reinforcement">
-                        <div class="pros-cons cons">
-                            • 학습 시간 오래 걸림<br>
-                            • 환경 설계 복잡<br>
-                            • 안전성 보장 어려움
-                        </div>
-                    </td>
+                    <td class="category-cell">비지도학습</td>
+                    <td class="content-cell">성능 평가 어려움, 결과 해석 어려움, 명확한 목표 설정 어려움</td>
+                </tr>
+                <tr>
+                    <td class="category-cell">강화학습</td>
+                    <td class="content-cell">학습 시간 오래 걸림, 환경 설계 복잡, 안전성 보장 어려움</td>
                 </tr>
             </tbody>
         </table>
