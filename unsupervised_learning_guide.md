@@ -1,4 +1,4 @@
-# 🤖 비지도학습(Unsupervised Learning) 완전 정리
+# 🤖 비지도학습(Unsupervised Learning) 완전 정리 
 
 ## 📖 목차
 - [비지도학습이란?](#비지도학습이란)
