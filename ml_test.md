@@ -1,12 +1,125 @@
 # 자율주행 지도학습 샘플 코드
+마지막 코드를 자세히 설명해드릴게요! 📚
 
-## 개요
-자율주행에서 지도학습을 활용한 교통표지판 분류 예시 코드입니다.
+## 🏗️ 전체 구조
 
-## 주요 기능
-1. **차선 인식** - OpenCV로 차선 특징 추출 후 RandomForest로 주행 방향 결정
-2. **교통표지판 분류** - CNN으로 정지, 직진, 좌회전, 우회전 표지판 인식
-3. **통합 예측** - 차선과 표지판 정보를 종합한 주행 판단
+### 클래스: `RealImageTrafficSignRecognition`
+- 교통표지판 인식을 위한 모든 기능을 담은 클래스
+
+## 🧩 주요 함수들
+
+### 1️⃣ `__init__(self)`
+```python
+def __init__(self):
+    self.model = None  # CNN 모델을 저장할 변수
+```
+- 클래스 초기화
+- 모델 변수를 None으로 설정
+
+### 2️⃣ `build_cnn_model(self)`
+```python
+model = models.Sequential([
+    layers.Conv2D(32, (3, 3), activation='relu', input_shape=(64, 64, 3)),
+    layers.BatchNormalization(),
+    layers.MaxPooling2D((2, 2)),
+    # ... 더 많은 레이어들
+])
+```
+**역할**: CNN 신경망 구조 설계
+- **Conv2D**: 이미지 특징 추출 (32개, 64개, 128개 필터)
+- **BatchNormalization**: 학습 안정화
+- **MaxPooling2D**: 이미지 크기 축소
+- **Dropout**: 과적합 방지
+- **Dense**: 최종 분류 (4개 클래스)
+
+### 3️⃣ `generate_realistic_training_data(self)`
+```python
+for class_id in range(4):  # 4개 클래스
+    for _ in range(125):   # 클래스당 125개 = 총 500개
+        image = np.random.rand(64, 64, 3)  # 랜덤 이미지 생성
+        
+        if class_id == 0:  # 정지표지판
+            image[:, :, 0] = np.random.uniform(0.7, 1.0, (64, 64))  # 빨간색
+```
+**역할**: 가상의 훈련 데이터 생성
+- **정지**: 빨간색 계열
+- **직진**: 파란색 계열  
+- **좌회전**: 초록색 계열
+- **우회전**: 노란색 계열
+
+### 4️⃣ `train_model(self)`
+```python
+# 데이터 생성
+images, labels = self.generate_realistic_training_data()
+
+# 훈련/테스트 분할
+X_train, X_test, y_train, y_test = train_test_split(...)
+
+# 모델 훈련
+history = self.model.fit(X_train, y_train, epochs=15, ...)
+```
+**역할**: 실제 모델 훈련
+- 500개 가상 이미지 생성
+- 80% 훈련용, 20% 테스트용으로 분할
+- 15번 에포크 훈련
+- 최종 정확도 출력
+
+### 5️⃣ `upload_and_predict(self)`
+```python
+uploaded = files.upload()  # 파일 업로드
+
+# 이미지 전처리
+processed_image = cv2.resize(image_array, (64, 64))
+processed_image_norm = processed_image.astype(np.float32) / 255.0
+
+# 예측
+predictions = self.model.predict(input_image, verbose=0)
+```
+**역할**: 실제 이미지 업로드 및 예측
+- 업로드 창 표시
+- 이미지 크기를 64x64로 조정
+- 0-1 범위로 정규화
+- CNN 모델로 예측
+- 3개 그래프로 시각화
+
+## 🔄 실행 흐름
+
+### main() 함수
+```python
+1. recognizer = RealImageTrafficSignRecognition()  # 객체 생성
+2. recognizer.show_sample_images()                # 사용법 안내
+3. history, accuracy = recognizer.train_model()   # 모델 훈련
+4. while True:                                    # 반복 테스트
+   recognizer.upload_and_predict()               # 이미지 업로드 & 예측
+```
+
+## 🎯 핵심 개념
+
+### 지도학습 요소
+- **데이터**: 이미지 + 라벨 (0:정지, 1:직진, 2:좌회전, 3:우회전)
+- **훈련**: 정답이 있는 데이터로 학습
+- **예측**: 새로운 이미지의 클래스 분류
+
+### CNN 구조
+```
+입력(64x64x3) → Conv2D → MaxPool → Conv2D → MaxPool → 
+Conv2D → Flatten → Dense → Dropout → Dense(4) → 출력
+```
+
+### 데이터 전처리
+1. **크기 조정**: 다양한 크기 → 64x64 고정
+2. **정규화**: 0-255 픽셀값 → 0-1 범위
+3. **배치 차원**: (64,64,3) → (1,64,64,3)
+
+## 💡 왜 이렇게 만들었나?
+
+1. **색상 기반 학습**: 실제 교통표지판의 색상 특징 활용
+2. **간단한 구조**: 학습용으로 이해하기 쉽게
+3. **시각화 포함**: 결과를 명확하게 확인
+4. **반복 테스트**: 여러 이미지로 계속 실험 가능
+
+이 코드는 **교육용 지도학습 데모**로, 실제 교통표지판 인식보다는 **CNN과 지도학습의 개념**을 이해하는 데 목적이 있어요! 😊
+  
 
 ## 코드
 
