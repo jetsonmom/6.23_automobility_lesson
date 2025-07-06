@@ -19,7 +19,7 @@
 
 | 번호 | 제목 | 링크 | 설명 |
 |------|------|------|------|
-| 1 | **Convolution 연산 시각화** | [애니메이션 보기](https://claude.ai/public/artifacts/2cebc728-66b5-414a-9e97-991f60a2a7e1) | 필터가 이미지 위를 이동하며 합성곱 연산을 수행하는 과정 |
+| 1 | **Convolution 연산 시각화** | [애니메이션 보기](https://claude.ai/public/artifacts/2cebc728-66b5-414a-9e97-991f60a2a7e1) | 합성곱 연산을 수행하는 과정 |
 | 2 | **Feature Map 생성 과정** | [애니메이션 보기](https://claude.ai/public/artifacts/5290adc4-4af1-4b9b-8f78-7d13e7c2e5d5) | 다양한 필터로 특징맵이 생성되는 과정 시각화 |
 | 3 | **Pooling 연산 시각화** | [애니메이션 보기](https://claude.ai/public/artifacts/84856cad-7697-4372-87a8-3507edb06af0) | Max Pooling과 Average Pooling의 동작 원리 |
 | 4 | **CNN 전체 구조** | [애니메이션 보기](https://claude.ai/public/artifacts/e8abe969-7543-4ce0-beb1-7cca14f231be) | 입력부터 출력까지 CNN의 전체 데이터 흐름 |
