@@ -17,7 +17,6 @@
 ## 4. Machine Learning
 - [Machine Learning Basic](ml_basic.md)
 - [머신러닝 학습 방법 비교표](ml_comparison.md)
-- [모델 훈련 및 평가](ml_test.md)
 - [지도학습과 자율주행 샘플 코드](autonomous_driving_ml.md)
 
 ## 5. OpenCV
