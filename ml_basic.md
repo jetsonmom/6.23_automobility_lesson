@@ -1,4 +1,4 @@
-# 머신러닝 학습 방법 비교표
+# 머신러닝 학습 방법 비교표 
 
 | 구분 | 지도학습 (Supervised Learning) | 비지도학습 (Unsupervised Learning) | 강화학습 (Reinforcement Learning) |
 |------|------|------|------|
