@@ -11,6 +11,7 @@
 ## 코드
 
 ```python
+!pip install opencv-python tensorflow scikit-learn matplotlib pillow
 import cv2
 import numpy as np
 import tensorflow as tf
