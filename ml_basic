@@ -6,191 +6,128 @@
     <title>머신러닝 학습 방법 비교표</title>
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-            margin: 20px;
+            font-family: 'Malgun Gothic', Arial, sans-serif;
+            margin: 40px;
             background-color: #ffffff;
-            line-height: 1.5;
-            color: #24292f;
+            line-height: 1.4;
+            color: #333;
         }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
+        
         h2 {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 16px;
-            color: #24292f;
-            border-bottom: 1px solid #d1d9e0;
-            padding-bottom: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 30px 0 15px 0;
+            color: #333;
         }
-        .comparison-table {
+        
+        table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 40px;
-            border: 1px solid #d1d9e0;
-        }
-        .comparison-table th, .comparison-table td {
-            border: 1px solid #d1d9e0;
-            padding: 12px 16px;
-            text-align: left;
-            vertical-align: top;
-        }
-        .comparison-table th {
-            background-color: #f6f8fa;
-            font-weight: 600;
-            text-align: center;
-        }
-        .category-cell {
-            background-color: #f6f8fa;
-            font-weight: 600;
-            width: 150px;
-            text-align: center;
-        }
-        .content-cell {
-            background-color: #ffffff;
-            line-height: 1.6;
-        }
-        .method-header {
-            font-size: 16px;
-            font-weight: 600;
-        }
-        .method-subtitle {
+            margin-bottom: 30px;
             font-size: 14px;
-            color: #656d76;
-            font-weight: normal;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .category {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            text-align: center;
+            width: 140px;
+        }
+        
+        .content {
+            background-color: #ffffff;
+        }
+        
+        .method-title {
+            font-weight: bold;
+            font-size: 15px;
+        }
+        
+        .method-subtitle {
+            font-size: 12px;
+            color: #666;
+            margin-top: 2px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>📊 비교표</h2>
-        
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th style="width: 150px;">특징</th>
-                    <th>
-                        <div class="method-header">지도학습</div>
-                        <div class="method-subtitle">(Supervised Learning)</div>
-                    </th>
-                    <th>
-                        <div class="method-header">비지도학습</div>
-                        <div class="method-subtitle">(Unsupervised Learning)</div>
-                    </th>
-                    <th>
-                        <div class="method-header">강화학습</div>
-                        <div class="method-subtitle">(Reinforcement Learning)</div>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="category-cell">데이터 형태</td>
-                    <td class="content-cell">라벨링된 데이터 (입력-출력 쌍)</td>
-                    <td class="content-cell">라벨링되지 않은 데이터</td>
-                    <td class="content-cell">환경과의 상호작용 데이터</td>
-                </tr>
-                <tr>
-                    <td class="category-cell">학습 목표</td>
-                    <td class="content-cell">입력에 대한 정확한 출력 예측</td>
-                    <td class="content-cell">데이터의 숨겨진 패턴 발견</td>
-                    <td class="content-cell">누적 보상 최대화</td>
-                </tr>
-                <tr>
-                    <td class="category-cell">학습 방식</td>
-                    <td class="content-cell">정답을 알고 있는 상태에서 학습</td>
-                    <td class="content-cell">정답 없이 데이터 자체에서 학습</td>
-                    <td class="content-cell">행동의 결과를 통해 학습</td>
-                </tr>
-                <tr>
-                    <td class="category-cell">피드백</td>
-                    <td class="content-cell">즉각적인 정답 제공</td>
-                    <td class="content-cell">피드백 없음</td>
-                    <td class="content-cell">지연된 보상/처벌</td>
-                </tr>
-                <tr>
-                    <td class="category-cell">주요 알고리즘</td>
-                    <td class="content-cell">선형회귀, 의사결정트리, SVM, 신경망</td>
-                    <td class="content-cell">K-means, 계층적 군집화, PCA, DBSCAN</td>
-                    <td class="content-cell">Q-learning, 정책 경사, Actor-Critic</td>
-                </tr>
-                <tr>
-                    <td class="category-cell">문제 유형</td>
-                    <td class="content-cell">분류, 회귀</td>
-                    <td class="content-cell">군집화, 차원축소, 밀도추정</td>
-                    <td class="content-cell">게임, 로봇제어, 자율주행</td>
-                </tr>
-                <tr>
-                    <td class="category-cell">활용 예시</td>
-                    <td class="content-cell">이메일 스팸 분류, 집값 예측, 의료 진단</td>
-                    <td class="content-cell">고객 세분화, 이상 탐지, 추천 시스템</td>
-                    <td class="content-cell">알파고, 자율주행, 게임 AI</td>
-                </tr>
-                <tr>
-                    <td class="category-cell">성능 평가</td>
-                    <td class="content-cell">정확도, 정밀도, 재현율 등 명확한 지표</td>
-                    <td class="content-cell">클러스터 품질, 차원축소 효과 등</td>
-                    <td class="content-cell">누적 보상, 성공률</td>
-                </tr>
-                <tr>
-                    <td class="category-cell">학습 속도</td>
-                    <td class="content-cell">상대적으로 빠름</td>
-                    <td class="content-cell">중간 정도</td>
-                    <td class="content-cell">상대적으로 느림</td>
-                </tr>
-            </tbody>
-        </table>
+    <h2>주요 특징</h2>
+    <table>
+        <tr>
+            <th class="category">특징</th>
+            <th>
+                <div class="method-title">지도학습</div>
+                <div class="method-subtitle">(Supervised Learning)</div>
+            </th>
+            <th>
+                <div class="method-title">비지도학습</div>
+                <div class="method-subtitle">(Unsupervised Learning)</div>
+            </th>
+            <th>
+                <div class="method-title">강화학습</div>
+                <div class="method-subtitle">(Reinforcement Learning)</div>
+            </th>
+        </tr>
+        <tr>
+            <td class="category">무료 오픈소스</td>
+            <td class="content">상업적 용도로도 자유롭게 사용 가능한 BSD 라이선스</td>
+            <td class="content">패턴 발견에 특화된 다양한 오픈소스 라이브러리</td>
+            <td class="content">OpenAI Gym 등 강화학습 전용 오픈소스 환경</td>
+        </tr>
+        <tr>
+            <td class="category">크로스 플랫폼</td>
+            <td class="content">Windows, Linux, macOS, Android, iOS 등 다양한 운영체제 지원</td>
+            <td class="content">Python, R, Scala 등 다양한 언어와 플랫폼 지원</td>
+            <td class="content">클라우드부터 임베디드까지 다양한 환경 지원</td>
+        </tr>
+        <tr>
+            <td class="category">다양한 언어 지원</td>
+            <td class="content">C++, Python, Java, C# 등 여러 프로그래밍 언어에서 사용 가능</td>
+            <td class="content">Python, R, Julia, Scala 등 데이터 분석 언어 지원</td>
+            <td class="content">Python, C++, JavaScript 등 게임 및 로봇 개발 언어</td>
+        </tr>
+        <tr>
+            <td class="category">고성능</td>
+            <td class="content">C/C++로 작성되어 빠른 처리 속도를 제공</td>
+            <td class="content">대용량 데이터 처리에 최적화된 알고리즘</td>
+            <td class="content">GPU 가속과 분산 처리로 대규모 환경 학습</td>
+        </tr>
+    </table>
 
-        <h2>✅ 주요 장점</h2>
-        
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th style="width: 150px;">학습 방법</th>
-                    <th>장점</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="category-cell">지도학습</td>
-                    <td class="content-cell">명확한 목표와 성능 지표, 검증된 알고리즘 다수, 실용적 문제 해결에 효과적</td>
-                </tr>
-                <tr>
-                    <td class="category-cell">비지도학습</td>
-                    <td class="content-cell">라벨링 비용 불필요, 새로운 패턴 발견 가능, 탐색적 데이터 분석에 유용</td>
-                </tr>
-                <tr>
-                    <td class="category-cell">강화학습</td>
-                    <td class="content-cell">복잡한 의사결정 문제 해결, 환경 변화에 적응적, 인간 개입 없이 자율 학습</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>❌ 주요 단점</h2>
-        
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th style="width: 150px;">학습 방법</th>
-                    <th>단점</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="category-cell">지도학습</td>
-                    <td class="content-cell">라벨링 비용 높음, 편향된 데이터에 민감, 새로운 패턴 발견 제한적</td>
-                </tr>
-                <tr>
-                    <td class="category-cell">비지도학습</td>
-                    <td class="content-cell">성능 평가 어려움, 결과 해석 어려움, 명확한 목표 설정 어려움</td>
-                </tr>
-                <tr>
-                    <td class="category-cell">강화학습</td>
-                    <td class="content-cell">학습 시간 오래 걸림, 환경 설계 복잡, 안전성 보장 어려움</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <h2>주요 기능</h2>
+    <table>
+        <tr>
+            <th class="category">분야</th>
+            <th>기능</th>
+        </tr>
+        <tr>
+            <td class="category">이미지 처리</td>
+            <td class="content">필터링, 색상 변환, 크기 조정, 회전 등 기본적인 이미지 조작</td>
+        </tr>
+        <tr>
+            <td class="category">컴퓨터 비전</td>
+            <td class="content">객체 검출, 얼굴 인식, 특징점 추출, 패턴 매칭</td>
+        </tr>
+        <tr>
+            <td class="category">비디오 처리</td>
+            <td class="content">비디오 파일 읽기/쓰기, 실시간 카메라 입력 처리</td>
+        </tr>
+        <tr>
+            <td class="category">머신러닝</td>
+            <td class="content">분류, 회귀, 클러스터링 등 기본적인 머신러닝 알고리즘</td>
+        </tr>
+    </table>
 </body>
 </html>
