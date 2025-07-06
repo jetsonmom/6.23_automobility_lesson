@@ -1,27 +1,7 @@
-
+|------|------|------|--------|
 | 구분|지도학습 (Supervised Learning)|비지도학습 (Unsupervised Learning) |강화학습 (Reinforcement Learning)  |
-|------|------|------|
-| 필터링 | Filtering | 이미지에 필터 적용 |
-| 스무딩 | Smoothing | 부드럽게 만들기 |
-| 블러링 | Blurring | 흐림 효과 |
-| 샤프닝 | Sharpening | 선명하게 만들기 |
-| 노이즈 제거 | Noise Reduction | 잡음 제거 |
-| 히스토그램 | Histogram | 픽셀 값 분포 |
-| 평활화 | Equalization | 밝기 균등화 |
+|------|------|------|--------|
 
-### 기하학적 변환
-
-| 용어 | 영어 | 설명 |
-|------|------|------|
-| 크기 조정 | Resize | 이미지 크기 변경 |
-| 회전 | Rotate | 이미지 회전 |
-| 이동 | Translation | 위치 이동 |
-| 스케일링 | Scaling | 비율 조정 |
-| 뒤집기 | Flip | 좌우/상하 반전 |
-| 자르기 | Crop | 일부 영역 추출 |
-| 변형 | Warp | 모양 변형 |
-| 아핀 변환 | Affine Transform | 선형 변환 |
-| 원근 변환 | Perspective Transform | 원근감 변환 |
 
 ### 필터와 커널
 
