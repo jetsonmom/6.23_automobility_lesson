@@ -1,4 +1,4 @@
-# 📘 AI 학습 정리 
+# 📘 AI 학습 정리  
 
 ## 1. About GitHub, Markdown, Colab
 - [GitHub 사용법](github-guide.md)
