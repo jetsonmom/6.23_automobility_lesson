@@ -655,6 +655,47 @@ plt.imshow(image, cmap='jet')        # 무지개색
 | **학습 용이성** | 특히 Python 바인딩으로 초보자도 쉽게 시작 가능 |
 
 ---
+# HSV 색공간으로 변환 (색상 검출에 더 좋음)
+hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+
+# 🔴 빨강색 범위 (0~10) + (160~180)
+red_lower1 = np.array([0, 70, 50])
+red_upper1 = np.array([10, 255, 255])
+red_lower2 = np.array([160, 70, 50])
+red_upper2 = np.array([180, 255, 255])
+
+# 🟡 노랑색 범위 (20~35)
+yellow_lower = np.array([20, 70, 70])
+yellow_upper = np.array([35, 255, 255])
+
+# 🟢 초록색 범위 (40~85)
+green_lower = np.array([40, 60, 60])
+green_upper = np.array([85, 255, 255])
+
+# 🔵 청록/파랑 보행자 불 (80~100)
+blue_lower = np.array([80, 30, 30])
+blue_upper = np.array([100, 255, 255])
+
+# 각 색상별 마스크 생성
+red_mask1 = cv2.inRange(hsv, red_lower1, red_upper1)
+red_mask2 = cv2.inRange(hsv, red_lower2, red_upper2)
+red_mask = cv2.bitwise_or(red_mask1, red_mask2)
+
+yellow_mask = cv2.inRange(hsv, yellow_lower, yellow_upper)
+green_mask  = cv2.inRange(hsv, green_lower, green_upper)
+blue_mask   = cv2.inRange(hsv, blue_lower, blue_upper)
+
+# 모든 마스크 결합
+traffic_light_mask = red_mask
+traffic_light_mask = cv2.bitwise_or(traffic_light_mask, yellow_mask)
+traffic_light_mask = cv2.bitwise_or(traffic_light_mask, green_mask)
+traffic_light_mask = cv2.bitwise_or(traffic_light_mask, blue_mask)
+
+# 마스크 적용: 신호등 색만 남김
+color_filtered = cv2.bitwise_and(image, image, mask=traffic_light_mask)
+
+# 흑백 변환 (Canny 전처리용)
+gray = cv2.cvtColor(color_filtered, cv2.COLOR_BGR2GRAY)
 
 ## 📚 추가 학습 자료
 
