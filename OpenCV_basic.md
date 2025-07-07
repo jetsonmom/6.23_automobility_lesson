@@ -144,6 +144,216 @@ sudo apt-get install libatlas-base-dev gfortran
 ### 딥러닝 모델 배포
 - **ONNX**: 모델 상호 운용성
 - **OpenVINO**: Intel 최적화 툴킷
+  # OpenCV 주요 용어 정리
+
+## 1. 기본 데이터 구조
+
+### Mat (Matrix)
+- OpenCV의 핵심 데이터 구조
+- 이미지, 벡터, 행렬을 저장하는 N차원 배열
+- C++에서는 `cv::Mat`, Python에서는 NumPy 배열로 표현
+
+### IplImage
+- OpenCV 1.x 시대의 이미지 구조체
+- 현재는 Mat으로 대체되었지만 레거시 코드에서 여전히 사용
+
+### Scalar
+- 4개 요소를 가진 벡터 (R, G, B, A 또는 단일 값)
+- 색상 값이나 임계값을 나타낼 때 사용
+
+## 2. 이미지 관련 용어
+
+### 색상 공간 (Color Space)
+- **RGB**: Red, Green, Blue
+- **BGR**: Blue, Green, Red (OpenCV 기본 형식)
+- **HSV**: Hue, Saturation, Value
+- **LAB**: L*a*b* 색상 공간
+- **YUV**: 휘도(Y)와 색차(U,V) 정보
+- **Grayscale**: 흑백/회색조 이미지
+
+### 채널 (Channel)
+- 이미지의 색상 구성 요소
+- Grayscale: 1채널, RGB: 3채널, RGBA: 4채널
+
+### 픽셀 (Pixel)
+- 이미지의 최소 단위 점
+- 좌표 (x, y)로 표현
+
+### ROI (Region of Interest)
+- 관심 영역, 이미지에서 특정 부분만 처리할 때 사용
+
+## 3. 이미지 처리 용어
+
+### 필터링 (Filtering)
+- **블러 (Blur)**: 이미지 흐리게 만들기
+- **가우시안 블러**: 가우시안 분포를 이용한 블러
+- **미디안 필터**: 중간값을 이용한 노이즈 제거
+- **바이래터럴 필터**: 경계 보존 스무딩
+
+### 모폴로지 (Morphology)
+- **침식 (Erosion)**: 객체 축소
+- **팽창 (Dilation)**: 객체 확대
+- **열림 (Opening)**: 침식 후 팽창
+- **닫힘 (Closing)**: 팽창 후 침식
+
+### 임계값 처리 (Thresholding)
+- **이진화**: 픽셀 값을 0 또는 255로 변환
+- **적응 임계값**: 지역적 특성에 따른 임계값
+- **Otsu 방법**: 자동 임계값 결정
+
+## 4. 특징 검출 용어
+
+### 코너 검출 (Corner Detection)
+- **Harris Corner**: Harris 코너 검출기
+- **Shi-Tomasi**: 좋은 추적 점 검출
+- **FAST**: 빠른 코너 검출
+
+### 특징 검출기 (Feature Detector)
+- **SIFT**: Scale-Invariant Feature Transform
+- **SURF**: Speeded Up Robust Features
+- **ORB**: Oriented FAST and Rotated BRIEF
+- **AKAZE**: Accelerated-KAZE
+
+### 기술자 (Descriptor)
+- 특징점의 주변 정보를 벡터로 표현
+- 매칭에 사용되는 고유한 서명
+
+### 키포인트 (Keypoint)
+- 특징점의 위치, 크기, 방향 정보를 포함
+
+## 5. 객체 검출 용어
+
+### 컨투어 (Contour)
+- 객체의 경계선
+- 외곽선을 따라 연결된 점들의 집합
+
+### 바운딩 박스 (Bounding Box)
+- 객체를 둘러싸는 최소 사각형
+- **AABB**: Axis-Aligned Bounding Box
+- **OBB**: Oriented Bounding Box
+
+### 허프 변환 (Hough Transform)
+- 직선, 원 등의 기하학적 형태 검출
+- **HoughLines**: 직선 검출
+- **HoughCircles**: 원 검출
+
+### 캐스케이드 분류기 (Cascade Classifier)
+- Haar 특징 기반 객체 검출
+- 얼굴 검출에 주로 사용
+
+## 6. 기하학적 변환 용어
+
+### 어파인 변환 (Affine Transform)
+- 평행선을 유지하는 변환
+- 회전, 이동, 크기 변경, 전단
+
+### 원근 변환 (Perspective Transform)
+- 4점을 이용한 원근 보정
+- 호모그래피 행렬 사용
+
+### 워핑 (Warping)
+- 이미지의 기하학적 변형
+
+## 7. 기계학습 용어
+
+### 훈련 데이터 (Training Data)
+- 모델 학습에 사용되는 데이터셋
+
+### 특징 벡터 (Feature Vector)
+- 객체의 특성을 수치로 표현한 벡터
+
+### 분류기 (Classifier)
+- **SVM**: Support Vector Machine
+- **KNN**: K-Nearest Neighbors
+- **랜덤 포레스트**: Random Forest
+
+### HOG (Histogram of Oriented Gradients)
+- 그래디언트 방향 히스토그램
+- 객체 검출에 사용되는 특징 기술자
+
+## 8. 비디오 처리 용어
+
+### 프레임 (Frame)
+- 비디오의 개별 이미지
+- FPS (Frames Per Second): 초당 프레임 수
+
+### 움직임 검출 (Motion Detection)
+- **배경 차분**: 배경과 현재 프레임의 차이
+- **프레임 차분**: 연속 프레임 간의 차이
+
+### 객체 추적 (Object Tracking)
+- **칼만 필터**: 상태 추정을 통한 추적
+- **입자 필터**: 확률적 추적 방법
+
+### 광학 흐름 (Optical Flow)
+- 연속 프레임에서 픽셀의 움직임
+- **Lucas-Kanade**: 지역 방법
+- **Farneback**: 전역 방법
+
+## 9. 카메라 및 캘리브레이션 용어
+
+### 내부 매개변수 (Intrinsic Parameters)
+- 카메라의 고유 특성
+- 초점 거리, 주점, 왜곡 계수
+
+### 외부 매개변수 (Extrinsic Parameters)
+- 카메라의 위치와 자세
+- 회전 행렬, 변환 벡터
+
+### 카메라 캘리브레이션 (Camera Calibration)
+- 카메라의 내부/외부 매개변수 계산
+- 체스보드 패턴 주로 사용
+
+### 왜곡 보정 (Distortion Correction)
+- 렌즈 왜곡 제거
+- **방사형 왜곡**: 중심에서 멀어질수록 왜곡
+- **접선 왜곡**: 렌즈와 센서의 불평행
+
+## 10. 성능 및 최적화 용어
+
+### ROI (Region of Interest)
+- 처리할 관심 영역 지정으로 성능 향상
+
+### 피라미드 (Pyramid)
+- 다해상도 이미지 표현
+- **가우시안 피라미드**: 해상도 감소
+- **라플라시안 피라미드**: 디테일 정보 보존
+
+### 인플레이스 연산 (In-place Operation)
+- 메모리 사용량 최적화를 위한 같은 메모리 공간 재사용
+
+### 스레드 안전성 (Thread Safety)
+- 멀티스레딩 환경에서의 안전한 함수 호출
+
+## 11. 일반적인 약어
+
+- **CV**: Computer Vision
+- **IP**: Image Processing
+- **ML**: Machine Learning
+- **DL**: Deep Learning
+- **AI**: Artificial Intelligence
+- **GPU**: Graphics Processing Unit
+- **CPU**: Central Processing Unit
+- **API**: Application Programming Interface
+- **SDK**: Software Development Kit
+
+## 12. 성능 측정 용어
+
+### 정확도 (Accuracy)
+- 올바른 예측의 비율
+
+### 정밀도 (Precision)
+- 양성 예측 중 실제 양성의 비율
+
+### 재현율 (Recall)
+- 실제 양성 중 올바르게 예측된 비율
+
+### F1-Score
+- 정밀도와 재현율의 조화 평균
+
+---
+
+*이 용어집은 OpenCV 사용 시 자주 접하게 되는 핵심 용어들을 정리한 것입니다. 각 용어는 실제 프로젝트에서 함수명이나 매개변수로 자주 사용됩니다.*
 
 ## 6. 설치 예시
 
