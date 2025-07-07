@@ -42,6 +42,178 @@ https://claude.ai/public/artifacts/39cc3eb1-891d-430e-a1d1-84538eb45522
 
 ---
 
+
+# OpenCV 필수 라이브러리 가이드
+
+## 1. 핵심 설치 패키지
+
+### Python 환경
+```bash
+# OpenCV 기본 설치
+pip install opencv-python
+
+# OpenCV 전체 기능 (contrib 모듈 포함)
+pip install opencv-contrib-python
+
+# 헤드리스 버전 (GUI 없는 서버 환경용)
+pip install opencv-python-headless
+```
+
+### C++ 환경
+```bash
+# Ubuntu/Debian
+sudo apt-get install libopencv-dev python3-opencv
+
+# CentOS/RHEL
+sudo yum install opencv-devel
+
+# macOS (Homebrew)
+brew install opencv
+```
+
+## 2. 필수 의존성 라이브러리
+
+### 이미지 처리 관련
+- **NumPy**: 배열 연산 및 이미지 데이터 처리
+- **Pillow (PIL)**: 이미지 파일 입출력
+- **scikit-image**: 고급 이미지 처리 알고리즘
+
+### 수학 및 과학 계산
+- **NumPy**: 수치 연산
+- **SciPy**: 과학 계산 라이브러리
+- **matplotlib**: 시각화 및 플롯팅
+
+### 기계학습 관련
+- **scikit-learn**: 머신러닝 알고리즘
+- **TensorFlow**: 딥러닝 프레임워크
+- **PyTorch**: 딥러닝 프레임워크
+
+## 3. 시스템 레벨 의존성
+
+### Linux 계열
+```bash
+# 필수 빌드 도구
+sudo apt-get install build-essential cmake
+
+# 이미지 코덱
+sudo apt-get install libjpeg-dev libpng-dev libtiff-dev
+
+# 비디오 코덱
+sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev
+sudo apt-get install libv4l-dev libxvidcore-dev libx264-dev
+
+# GUI 지원
+sudo apt-get install libgtk-3-dev
+
+# 수학 라이브러리
+sudo apt-get install libatlas-base-dev gfortran
+```
+
+### Windows
+- **Microsoft Visual C++ Redistributable**
+- **Intel TBB** (Threading Building Blocks)
+- **적절한 코덱 팩** (K-Lite Codec Pack 등)
+
+## 4. 선택적 확장 라이브러리
+
+### 컴퓨터 비전 특화
+- **dlib**: 얼굴 인식 및 객체 검출
+- **imutils**: OpenCV 유틸리티 함수
+- **face_recognition**: 얼굴 인식 전용
+
+### 성능 최적화
+- **Intel TBB**: 병렬 처리
+- **OpenMP**: 멀티스레딩
+- **CUDA**: GPU 가속 (NVIDIA)
+
+### 추가 이미지 형식 지원
+- **imageio**: 다양한 이미지 형식 지원
+- **rawpy**: RAW 이미지 처리
+- **pydicom**: DICOM 의료 이미지
+
+## 5. 특수 용도 라이브러리
+
+### 3D 처리
+- **Open3D**: 3D 데이터 처리
+- **PCL (Point Cloud Library)**: 포인트 클라우드 처리
+
+### 증강현실/가상현실
+- **OpenGL**: 3D 그래픽 렌더링
+- **PyOpenGL**: Python OpenGL 바인딩
+
+### 딥러닝 모델 배포
+- **ONNX**: 모델 상호 운용성
+- **OpenVINO**: Intel 최적화 툴킷
+
+## 6. 설치 예시
+
+### Python 가상환경 설정
+```bash
+# 가상환경 생성
+python -m venv opencv_env
+
+# 가상환경 활성화
+source opencv_env/bin/activate  # Linux/macOS
+opencv_env\Scripts\activate     # Windows
+
+# 필수 패키지 설치
+pip install opencv-contrib-python numpy matplotlib pillow scikit-image
+```
+
+### requirements.txt 예시
+```txt
+opencv-contrib-python>=4.5.0
+numpy>=1.21.0
+matplotlib>=3.5.0
+pillow>=8.3.0
+scikit-image>=0.18.0
+scikit-learn>=1.0.0
+imutils>=0.5.4
+```
+
+## 7. 버전 호환성 확인
+
+### Python에서 OpenCV 정보 확인
+```python
+import cv2
+print(f"OpenCV Version: {cv2.__version__}")
+print(f"Build Information:\n{cv2.getBuildInformation()}")
+```
+
+### 주요 모듈 가용성 확인
+```python
+import cv2
+print("Available modules:")
+print(cv2.modules)
+```
+
+## 8. 문제 해결 팁
+
+### 일반적인 오류 및 해결책
+- **ImportError**: 의존성 라이브러리 재설치
+- **Video codec 오류**: 적절한 코덱 설치
+- **GUI 오류**: 디스플레이 설정 확인 (특히 SSH 환경)
+
+### 성능 최적화
+- Intel TBB 활성화
+- CUDA 지원 빌드 사용 (GPU 가속)
+- 적절한 이미지 크기 조정
+
+## 9. 추천 개발 환경
+
+### IDE 및 에디터
+- **Jupyter Notebook**: 대화형 개발
+- **PyCharm**: 통합 개발 환경
+- **VS Code**: 가벼운 에디터
+
+### 디버깅 도구
+- **OpenCV 내장 디버그 기능**
+- **matplotlib**을 이용한 시각적 디버깅
+- **pdb** Python 디버거
+
+---
+
+*이 가이드는 OpenCV 4.x 버전을 기준으로 작성되었습니다. 최신 정보는 [OpenCV 공식 문서](https://opencv.org/)를 참조하세요.*
 ## 활용 분야
 
 | 분야 | 활용 예시 |
