@@ -147,8 +147,8 @@ model.info()
 # COCO8 예제 데이터셋으로 100 에포크 훈련
 results = model.train(data="coco8.yaml", epochs=100, imgsz=640)
 
-# 'bus.jpg' 이미지에 대해 YOLOv8n 모델로 추론 실행
-results = model("path/to/bus.jpg")
+# 'xxx.jpg' 사진을 다운로드하고 경로를 넣어준다.이미지에  대해 YOLOv8n 모델로 추론 실행
+results = model("path/to/xxx.jpg")
 ```
 
 ### CLI 명령어 예제
