@@ -103,15 +103,19 @@ YOLOv8 시리즈는 컴퓨터 비전의 특정 작업에 특화된 다양한 모
 
 ## YOLOv8 성능 벤치마크
 
-### COCO 데이터셋 탐지 성능
+# YOLOv8 성능 벤치마크
+
+## COCO 데이터셋 탐지 성능
 
 | 모델 | 크기 (픽셀) | mAPval 50-95 | 속도 CPU ONNX (ms) | 속도 A100 TensorRT (ms) | 매개변수 (M) | FLOPs (B) | 다운로드 |
 |------|-------------|--------------|-------------------|------------------------|-------------|-----------|----------|
-| YOLOv8n | 640 | 37.3 | 80.4 | 0.99 | 3.2 | 8.7 | [📥 yolov8n.pt](yolov8n.pt) |
-| YOLOv8s | 640 | 44.9 | 128.4 | 1.20 | 11.2 | 28.6 | [📥 yolov8s.pt](yolov8s.pt) |
-| YOLOv8m | 640 | 50.2 | 234.7 | 1.83 | 25.9 | 78.9 | [📥 yolov8m.pt](yolov8m.pt) |
-| YOLOv8l | 640 | 52.9 | 375.2 | 2.39 | 43.7 | 165.2 | [📥 yolov8l.pt](yolov8l.pt) |
-| YOLOv8x | 640 | 53.9 | 479.1 | 3.53 | 68.2 | 257.8 | [📥 yolov8x.pt](yolov8x.pt) |
+| **YOLOv8n** | 640 | 37.3 | 80.4 | 0.99 | 3.2 | 8.7 | [📥 yolov8n.pt](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov8n.pt) |
+| **YOLOv8s** | 640 | 44.9 | 128.4 | 1.20 | 11.2 | 28.6 | [📥 yolov8s.pt](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov8s.pt) |
+| **YOLOv8m** | 640 | 50.2 | 234.7 | 1.83 | 25.9 | 78.9 | [📥 yolov8m.pt](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov8m.pt) |
+| **YOLOv8l** | 640 | 52.9 | 375.2 | 2.39 | 43.7 | 165.2 | [📥 yolov8l.pt](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov8l.pt) |
+| **YOLOv8x** | 640 | 53.9 | 479.1 | 3.53 | 68.2 | 257.8 | [📥 yolov8x.pt](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov8x.pt) |
+
+> 💡 **참고**: 사전 학습된 80개의 클래스를 포함하여 COCO에서 학습된 모델입니다.
 
 > 💡 **참고**: 사전 학습된 80개의 클래스를 포함하여 COCO에서 학습된 모델입니다. 자세한 사용 예제는 [탐지 문서](https://docs.ultralytics.com/tasks/detect/)를 참조하세요.
 
