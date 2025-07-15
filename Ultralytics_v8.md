@@ -98,3 +98,77 @@ YOLOv8 시리즈는 컴퓨터 비전의 특정 작업에 특화된 다양한 모
 | **포즈/키포인트** | 보행자 자세 인식 | YOLOv8-pose | 보행자 행동 예측 |
 | **방향 탐지** | 주차된 차량의 방향 인식 | YOLOv8-obb | 복잡한 주차 환경 |
 | **분류** | 교통 표지판 종류 분류 | YOLOv8-cls | 표지판 세부 분류 |
+
+---
+
+## YOLOv8 성능 벤치마크
+
+### COCO 데이터셋 탐지 성능
+
+| 모델 | 크기 (픽셀) | mAPval 50-95 | 속도 CPU ONNX (ms) | 속도 A100 TensorRT (ms) | 매개변수 (M) | FLOPs (B) | 다운로드 |
+|------|-------------|--------------|-------------------|------------------------|-------------|-----------|----------|
+| YOLOv8n | 640 | 37.3 | 80.4 | 0.99 | 3.2 | 8.7 | [📥 yolov8n.pt](yolov8n.pt) |
+| YOLOv8s | 640 | 44.9 | 128.4 | 1.20 | 11.2 | 28.6 | [📥 yolov8s.pt](yolov8s.pt) |
+| YOLOv8m | 640 | 50.2 | 234.7 | 1.83 | 25.9 | 78.9 | [📥 yolov8m.pt](yolov8m.pt) |
+| YOLOv8l | 640 | 52.9 | 375.2 | 2.39 | 43.7 | 165.2 | [📥 yolov8l.pt](yolov8l.pt) |
+| YOLOv8x | 640 | 53.9 | 479.1 | 3.53 | 68.2 | 257.8 | [📥 yolov8x.pt](yolov8x.pt) |
+
+> 💡 **참고**: 사전 학습된 80개의 클래스를 포함하여 COCO에서 학습된 모델입니다. 자세한 사용 예제는 [탐지 문서](https://docs.ultralytics.com/tasks/detect/)를 참조하세요.
+
+### 성능 지표 설명
+
+| 지표 | 설명 | 의미 |
+|------|------|------|
+| **mAPval 50-95** | 평균 정밀도 (IoU 0.5-0.95) | 높을수록 정확도 우수 |
+| **속도 CPU ONNX** | CPU에서의 추론 시간 | 낮을수록 빠른 처리 |
+| **속도 A100 TensorRT** | GPU에서의 추론 시간 | 낮을수록 빠른 처리 |
+| **매개변수** | 모델의 파라미터 수 | 적을수록 메모리 효율적 |
+| **FLOPs** | 부동소수점 연산 수 | 적을수록 연산 효율적 |
+
+---
+
+## YOLOv8 사용 예시
+
+### Python 코드 예제
+
+```python
+from ultralytics import YOLO
+
+# COCO 사전 훈련된 YOLOv8n 모델 로드
+model = YOLO("yolov8n.pt")
+
+# 모델 정보 표시 (선택사항)
+model.info()
+
+# COCO8 예제 데이터셋으로 100 에포크 훈련
+results = model.train(data="coco8.yaml", epochs=100, imgsz=640)
+
+# 'bus.jpg' 이미지에 대해 YOLOv8n 모델로 추론 실행
+results = model("path/to/bus.jpg")
+```
+
+### CLI 명령어 예제
+
+```bash
+# 모델 훈련
+yolo detect train data=coco8.yaml model=yolov8n.pt epochs=100 imgsz=640
+
+# 추론 실행
+yolo detect predict model=yolov8n.pt source="path/to/bus.jpg"
+
+# 모델 검증
+yolo detect val model=yolov8n.pt data=coco8.yaml
+
+# 모델 내보내기
+yolo detect export model=yolov8n.pt format=onnx
+```
+
+### 지원되는 작업별 사용법
+
+| 작업 | 모델 파일 | 사용 예시 | 문서 링크 |
+|------|-----------|-----------|----------|
+| **객체 탐지** | `yolov8n.pt` | `YOLO("yolov8n.pt")` | [Detection](https://docs.ultralytics.com/tasks/detect/) |
+| **세그멘테이션** | `yolov8n-seg.pt` | `YOLO("yolov8n-seg.pt")` | [Segmentation](https://docs.ultralytics.com/tasks/segment/) |
+| **분류** | `yolov8n-cls.pt` | `YOLO("yolov8n-cls.pt")` | [Classification](https://docs.ultralytics.com/tasks/classify/) |
+| **포즈 추정** | `yolov8n-pose.pt` | `YOLO("yolov8n-pose.pt")` | [Pose](https://docs.ultralytics.com/tasks/pose/) |
+| **방향 탐지** | `yolov8n-obb.pt` | `YOLO("yolov8n-obb.pt")` | [OBB](https://docs.ultralytics.com/tasks/obb/) |
