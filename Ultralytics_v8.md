@@ -1,6 +1,7 @@
 ### YOLO 모델 성능 비교 및 YOLOv8 특징
 
 #### YOLO 모델들의 성능 비교
+<img width="953" height="361" alt="image" src="https://github.com/user-attachments/assets/bf304a42-85ce-4de1-af43-01ad9e2d53f6" />
 
 #### 차트 분석 개요
 
