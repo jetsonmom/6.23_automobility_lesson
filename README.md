@@ -34,6 +34,7 @@
 - [YOLOv12](YOLOv12_test.md)
 
 ## 8. Deep Learning Frameworks 
+- [TensorFlow_basic](TensorFlow_basic.md)
 - [PyTorch_Basic](PyTorch_basic.md)
 - [TensorFlow vs PyTorch vs TensorRT 비교](frameworks_comparison.md)
 - [TensorRT](TensorRT_test.md)
