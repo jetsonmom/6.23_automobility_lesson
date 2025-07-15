@@ -166,23 +166,88 @@ results[0].show()
 ```
 ### CLI 명령어 예제
 
+## YOLOv8 CLI 명령어 가이드
+
+### 개요
+YOLOv8 CLI 명령어들은 각각 **다른 목적**으로 사용하는 명령어들입니다.
+
+### 단계별 사용 순서
+
+#### 📚 **1단계: Train (학습)** 
 ```bash
-# 모델 훈련
 yolo detect train data=coco8.yaml model=yolov8n.pt epochs=100 imgsz=640
+```
+- **목적**: 새로운 데이터로 모델을 훈련시킬 때
+- **예시**: 한국 도로 표지판 학습
+- **사용 시기**: 커스텀 데이터셋으로 모델을 개선하고 싶을 때
 
-# 추론 실행
-yolo detect predict model=yolov8n.pt source="path/to/bus.jpg"
+#### 🔍 **2단계: Predict (추론)**
+```bash
+yolo detect predict model=yolov8n.pt source="your_image.jpg"
+```
+- **목적**: 실제로 이미지 분석할 때 (가장 많이 사용)
+- **예시**: 업로드한 사진에서 차량/신호등 찾기
+- **사용 시기**: 완성된 모델로 실제 객체 탐지를 수행할 때
 
-# 모델 검증
+#### 📊 **3단계: Val (검증)**
+```bash
 yolo detect val model=yolov8n.pt data=coco8.yaml
+```
+- **목적**: 모델이 얼마나 정확한지 확인할 때
+- **예시**: mAP, 정확도, 재현율 등 성능 지표 측정
+- **사용 시기**: 모델 성능을 객관적으로 평가하고 싶을 때
 
-# 모델 내보내기
+#### 📦 **4단계: Export (배포)**
+```bash
 yolo detect export model=yolov8n.pt format=onnx
 ```
+- **목적**: 완성된 모델을 다른 환경에서 사용할 수 있게 변환
+- **예시**: ONNX, TensorRT, CoreML 등 다양한 형식으로 변환
+- **사용 시기**: 모바일 앱이나 웹 서비스에 모델을 배포할 때
+
+### Google Colab에서 실행하기
+
+#### 설치 및 기본 설정
+```bash
+# 라이브러리 설치
+!pip install ultralytics
+
+# 각 명령어 앞에 '!' 추가하여 실행
+!yolo detect train data=coco8.yaml model=yolov8n.pt epochs=100 imgsz=640
+!yolo detect predict model=yolov8n.pt source="your_image.jpg"
+!yolo detect val model=yolov8n.pt data=coco8.yaml
+!yolo detect export model=yolov8n.pt format=onnx
+```
+
+### 학습 단계별 권장사항
+
+| 학습 단계 | 주요 사용 명령어 | 설명 |
+|-----------|------------------|------|
+| **초급** | `predict` | 사전 훈련된 모델로 객체 탐지 체험 |
+| **중급** | `train` + `predict` | 커스텀 데이터로 모델 학습 후 테스트 |
+| **고급** | 전체 워크플로우 | 학습 → 검증 → 배포까지 전 과정 |
+
+### 자율주행 프로젝트 적용 예시
+
+### 실습 수업에서
+- **주로 사용**: `predict` 명령어
+- **목적**: 학생들이 직접 사진을 업로드해서 객체 탐지 체험
+
+### 프로젝트 개발에서
+- **전체 워크플로우** 사용
+- **순서**: Train → Val → Predict → Export
+
+## 주의사항
+- **Train**: 시간이 오래 걸리므로 처음에는 epochs를 10-20으로 설정
+- **Predict**: 가장 자주 사용하는 명령어
+- **Val**: 모델 성능 비교시 유용
+- **Export**: 최종 배포 단계에서 사용
+
+> 💡 **팁**: 학생들과 실습할 때는 **Predict**만 주로 사용하고, 나머지는 고급 과정에서 배우면 됩니다!
 colab cli명령
 ```
 # 모델 훈련
-!yolo detect train data=coco8.yaml model=yolov8n.pt epochs=100 imgsz=640
+!yolo detect train data=coco8.yaml model=yolov8n.pt epochs=10 imgsz=640
 
 # 추론 실행 (업로드한 이미지 경로로 변경)
 !yolo detect predict model=yolov8n.pt source="your_uploaded_image.jpg"
@@ -194,6 +259,7 @@ colab cli명령
 !yolo detect export model=yolov8n.pt format=onnx
 
 ```
+
 ### 지원되는 작업별 사용법
 
 | 작업 | 모델 파일 | 사용 예시 | 문서 링크 |
