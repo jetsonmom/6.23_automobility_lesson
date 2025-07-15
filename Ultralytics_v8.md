@@ -150,15 +150,19 @@ results = model.train(data="coco8.yaml", epochs=100, imgsz=640)
 # 'xxx.jpg' 사진을 다운로드하고 경로를 넣어준다.이미지에  대해 YOLOv8n 모델로 추론 실행
 results = model("path/to/xxx.jpg")
 ```
+colab test code
 ```
 # 라이브러리 설치
-!pip install ultralytics # 사진 업로드 from google.colab import files from ultralytics import YOLO # COCO 사전 훈련된 YOLOv8n 모델 로드
+!pip install ultralytics # 사진 업로드
+from google.colab import files
+from ultralytics import YOLO # COCO 사전 훈련된 YOLOv8n 모델 로드
 model = YOLO("yolov8n.pt") # 모델 정보 표시 (선택사항)
 model.info() # COCO8 예제 데이터셋으로 100 에포크 훈련
-results = model.train(data="coco8.yaml", epochs=100, imgsz=640) # 사진 업로드하고 경로 설정
+results = model.train(data="coco8.yaml", epochs=10, imgsz=640) # 사진 업로드하고 경로 설정
 uploaded = files.upload()
 image_path = list(uploaded.keys())[0] # 업로드한 이미지에 대해 YOLOv8n 모델로 추론 실행
-results = model(image_path) results[0].show()
+results = model(image_path)
+results[0].show()
 ```
 ### CLI 명령어 예제
 
