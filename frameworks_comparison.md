@@ -1,3 +1,12 @@
+
+
+
+
+
+
+
+
+
 # # NumPy vs TensorFlow 비교 가이드 🚀
 
 > NumPy 사용자를 위한 TensorFlow 텐서 학습 가이드
@@ -176,12 +185,5 @@ with tf.device('/GPU:0'):
 - [TensorFlow 공식 문서](https://www.tensorflow.org/guide)
 - [TensorFlow NumPy 호환성 가이드](https://www.tensorflow.org/guide/tf_numpy)
 
----
 
-## 📝 라이센스
 
-이 가이드는 MIT 라이센스 하에 배포됩니다.
-
----
-
-**⭐ 이 가이드가 도움이 되었다면 스타를 눌러주세요!**
