@@ -179,7 +179,21 @@ yolo detect val model=yolov8n.pt data=coco8.yaml
 # 모델 내보내기
 yolo detect export model=yolov8n.pt format=onnx
 ```
+colab cli명령
+```
+# 모델 훈련
+!yolo detect train data=coco8.yaml model=yolov8n.pt epochs=100 imgsz=640
 
+# 추론 실행 (업로드한 이미지 경로로 변경)
+!yolo detect predict model=yolov8n.pt source="your_uploaded_image.jpg"
+
+# 모델 검증
+!yolo detect val model=yolov8n.pt data=coco8.yaml
+
+# 모델 내보내기
+!yolo detect export model=yolov8n.pt format=onnx
+
+```
 ### 지원되는 작업별 사용법
 
 | 작업 | 모델 파일 | 사용 예시 | 문서 링크 |
