@@ -29,9 +29,10 @@
 - [CNN_자율주행 관련 코드](cnn_test.md)
 
 ## 7. Ultralytics
-- [Ultralytics_Basic](Ultralytics_v8.md)
-- [Ultralytics_Basic](Ultralytics_v11.md)
-- [Ultralytics_Basic](Ultralytics_v12.md)
+- [Ultralytics_Basic](Ultralytics_basic.md)
+- [Ultralytics_v8](Ultralytics_v8.md)
+- [Ultralytics_v11](Ultralytics_v11.md)
+- [Ultralytics_v12](Ultralytics_v12.md)
 
 ## 8. Deep Learning Frameworks 
 - [TensorFlow_basic](TensorFlow_basic.md)
